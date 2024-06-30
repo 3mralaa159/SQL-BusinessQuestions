@@ -1,7 +1,11 @@
-# Q
+# Question
+    You're tasked with analyzing a Spotify-like dataset that captures user listening habits.
+    For each user, calculate the total listening time and the count of unique songs they've listened to. 
+    In the database duration values are displayed in seconds. Round the total listening duration to the nearest whole minute.
 # link
+    https://platform.stratascratch.com/coding/10367-aggregate-listening-data?code_type=1
 # Answwer:
-# Import your libraries
+Import your libraries
 import pandas as pd
 
 # Start writing code
