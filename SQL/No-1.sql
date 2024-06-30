@@ -4,7 +4,7 @@
   duration to the nearest whole minute.
 # link
   
-  [link](https://platform.stratascratch.com/coding/10367-aggregate-listening-data?code_type=1)
+  [link](https://platform.stratascratch.com/coding/10367-aggregate-listening-data?code_type=1/).
 # Answer:
 select user_id , count(distinct song_id) as unique_song_count ,
 ceil(sum(listen_duration)/60) as total_listen_duration
