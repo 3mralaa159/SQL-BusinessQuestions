@@ -1,7 +1,7 @@
 # Question
-For each week, find the total number of orders. Include only the orders that are from the first quarter of 2023.
+  For each week, find the total number of orders. Include only the orders that are from the first quarter of 2023.
 # link
-https://platform.stratascratch.com/coding/10363-weekly-orders-report?code_type=2
+  https://platform.stratascratch.com/coding/10363-weekly-orders-report?code_type=2
 
 # Answer
 # Import your libraries
