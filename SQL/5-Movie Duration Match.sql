@@ -11,3 +11,11 @@ from entertainment_catalog a
 join flight_schedule b
 on a.duration <= b.flight_duration
 where b.flight_id = '101'
+
+# Answer.2
+select '101' as flight_id ,  movie_id , duration
+from entertainment_catalog
+where duration <= (
+select flight_duration
+from flight_schedule
+where flight_id = '101')
