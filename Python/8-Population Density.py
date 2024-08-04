@@ -23,3 +23,20 @@ nn = df['density'].idxmin()
 n = df['density'].idxmax()
 # fect data from DataFrame
 df.loc[[n,nn],[ 'city', 'country', 'density']]
+
+# Answer.2
+import pandas as pd 
+df = pd.DataFrame(cities_population)
+df['density'] = df.apply(lambda row: (row['population'] / row['area']) if row['area'] > 0 else None, axis=1)
+df = df.dropna(subset=['density'])  # Drop rows where density calculation was not possible
+df['density'] = df['density'].round().astype(int)
+
+# Identify city with minimum density
+min_density_city = df.nsmallest(1, 'density')
+
+# Identify city with maximum density
+max_density_city = df.nlargest(1, 'density')
+
+# Output results
+result = pd.concat([min_density_city, max_density_city])
+print(result[['city', 'country', 'density']])
