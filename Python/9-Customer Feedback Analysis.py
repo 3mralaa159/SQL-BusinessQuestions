@@ -30,3 +30,18 @@ def cal(x):
 # Apply the func and filter 
 df['calculated_category'] = df['feedback_text'].apply(cal)
 df.query("calculated_category != 'short'")
+
+# Answwer.2
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+customer_feedback.head()
+df = customer_feedback.copy()
+# Filter to social media only
+df = df[df['source_channel']=='social_media']
+bins =[0,40,80,200]
+labels =['short','mid','long']
+data = df['feedback_text'].apply(lambda x : len(x))
+df['calculated category'] = pd.cut(data,bins,labels=labels)
+df[(df['source_channel']=='social_media')&(df['calculated category']!='short')]
