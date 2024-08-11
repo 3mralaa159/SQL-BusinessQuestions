@@ -20,7 +20,7 @@ WHERE user_id IN (
     GROUP BY friend_id
     HAVING COUNT(*) > 1
 );
-
+-------------------------------------------------------------------
 # Answer.2
 WITH
     Karl_Friends AS (
@@ -47,7 +47,7 @@ FROM
     users u
 WHERE 
     u.user_id IN (SELECT friend_id FROM Mutual_Friends);
-
+-------------------------------------------------------------------
 # Wrong Answer
 ( retrieve id that may appear for karl or hans )
 select user_id , user_name 
