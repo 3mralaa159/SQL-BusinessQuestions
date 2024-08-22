@@ -15,3 +15,20 @@ group by 1 , 2
 order by 3 desc 
 ) p
 where row_number <=10
+
+# Answer.2
+SELECT a.user_id, b.name, SUM(a.distance) AS total
+FROM lyft_rides_log a
+JOIN lyft_users b ON a.user_id = b.id
+GROUP BY a.user_id, b.name
+HAVING SUM(a.distance) >= (
+    SELECT MIN(total)
+    FROM (
+        SELECT SUM(distance) AS total
+        FROM lyft_rides_log
+        GROUP BY user_id
+        ORDER BY total DESC
+        LIMIT 10
+    ) t
+)
+ORDER BY total DESC;
